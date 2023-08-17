@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using CoreLayer.Entities;
+using System;
 
 namespace EntityLayer.Concrete
 {
-    public class CarColor
+    public class CarColor : IEntity
     {
         public int Id { get; set; }
         public string Color { get; set; }

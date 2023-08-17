@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-
+using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 
 namespace DataAccessLayer.Mappers.AutoMapper
 {
@@ -7,7 +8,7 @@ namespace DataAccessLayer.Mappers.AutoMapper
     {
         public DtoMapper()
         {
-            
+            CreateMap<SubCategory, SubCategoryDTO>().ReverseMap();
         }
     }
 }

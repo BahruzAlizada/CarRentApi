@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.PortableExecutable;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CoreLayer.Entities;
+using System;
 
 namespace EntityLayer.Concrete
 {
-    public class Car
+    public class Car : IEntity
     {
         public int Id { get; set; }
         public int CategoryId { get; set; }
@@ -17,9 +13,8 @@ namespace EntityLayer.Concrete
         public int CarColorId { get; set; }
         public int CarCountryMarketId { get; set; }
         public int CarGearBoxId { get; set; }
-        public int CarNumberSeatId { get; set; }
+        public int CarNumberSeatId { get; set; }  
         public int CarEngineTypeId { get; set; }
-        public int CustomerId { get; set; }
 
 
         public double Km { get; set; }
@@ -38,12 +33,10 @@ namespace EntityLayer.Concrete
         public Ban Ban { get; set; }
         public List<CarImage> Images { get; set; }
         public CarYear CarYear { get; set; }
-        public CarEngineCapacity EngineCapacity { get; set; }
         public CarColor CarColor { get; set; }
         public CarCountryMarket CarCountryMarket { get; set; }
-        public CarEngineCapacity CarEngineCapacity { get; set; }
         public CarGearBox CarGearBox { get; set; }
         public CarNumberSeat CarNumberSeat { get; set; }
-        public Customer Customer { get; set; }
+        public CarEngineType CarEngineType { get; set; }
     }
 }

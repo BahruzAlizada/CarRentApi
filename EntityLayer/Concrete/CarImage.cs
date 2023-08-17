@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CoreLayer.Entities;
+using System;
 
 namespace EntityLayer.Concrete;
 
-public class CarImage
+public class CarImage : IEntity
 {
     public int Id { get; set; }
     public int CarId { get; set; }

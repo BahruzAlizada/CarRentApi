@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CoreLayer.Entities;
+using System;
 
 namespace EntityLayer.Concrete
 {
-    public class CarGearBox //Sürətlər qutusu
+    public class CarGearBox : IEntity //Sürətlər qutusu
     {
         public int Id { get; set; }
         public string GearBox { get; set; }

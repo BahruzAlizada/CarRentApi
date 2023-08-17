@@ -1,6 +1,5 @@
 ﻿
-
-namespace CoreLayer.Entities.Abstract
+namespace CoreLayer.Entities
 {
     public interface IEntity
     {

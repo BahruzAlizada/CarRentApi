@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using CoreLayer.Entities;
+using System;
 
 namespace EntityLayer.Concrete
 {
-    public class CarCountryMarket //Hansı bazar üçün yığılıb
+    public class CarCountryMarket : IEntity //Hansı bazar üçün yığılıb
     {
         public int Id { get; set; }
         public string Country { get; set; }

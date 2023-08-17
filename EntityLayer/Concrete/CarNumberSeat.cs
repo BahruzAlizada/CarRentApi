@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using CoreLayer.Entities;
+using System;
 
 namespace EntityLayer.Concrete
 {
-    public class CarNumberSeat  //Oturacaqlarin sayi
+    public class CarNumberSeat : IEntity  //Oturacaqlarin sayi
     {
         public int Id { get; set; }
         public string NumberSeat { get; set; }
