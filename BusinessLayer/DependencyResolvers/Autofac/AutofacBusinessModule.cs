@@ -23,6 +23,10 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<CarGearBoxManager>().As<ICarGearBoxService>().SingleInstance();
             builder.RegisterType<EFCarGearBoxDal>().As<ICarGearBoxDal>().SingleInstance();
+
+            builder.RegisterType<BanManager>().As<IBanService>().SingleInstance();
+            builder.RegisterType<EFBanDal>().As<IBanDal>().SingleInstance();
+
         }
     }
 }

@@ -7,19 +7,19 @@ namespace CarRentApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarGearBoxController : ControllerBase
+    public class CarCountryMarketsController : ControllerBase
     {
-        private readonly ICarGearBoxService carGearBoxService;
-        public CarGearBoxController(ICarGearBoxService carGearBoxService)
+        private readonly ICarCountryMarketService carCountryMarketService;
+        public CarCountryMarketsController(ICarCountryMarketService carCountryMarketService)
         {
-            this.carGearBoxService = carGearBoxService;
+            this.carCountryMarketService=carCountryMarketService;
         }
 
         #region GetAll
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            var result = carGearBoxService.GetAll();
+            var result = carCountryMarketService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -32,7 +32,7 @@ namespace CarRentApi.Controllers
         [HttpGet("GetById/{id}")]
         public IActionResult GetById(int id)
         {
-            var result = carGearBoxService.GetById(id);
+            var result = carCountryMarketService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -43,9 +43,9 @@ namespace CarRentApi.Controllers
 
         #region Add
         [HttpPost("Add")]
-        public IActionResult Add(GearBoxDTO gearBoxDTO)
+        public IActionResult Add(CountryMarketDTO countryMarketDTO)
         {
-            var result = carGearBoxService.Add(gearBoxDTO);
+            var result = carCountryMarketService.Add(countryMarketDTO);
             if (result.Success)
             {
                 return Ok(result);
@@ -56,9 +56,9 @@ namespace CarRentApi.Controllers
 
         #region Update
         [HttpPost("Update")]
-        public IActionResult Update(int id, GearBoxDTO gearBoxDTO)
+        public IActionResult Update(int id,CountryMarketDTO countryMarketDTO)
         {
-            var result = carGearBoxService.Update(gearBoxDTO);
+            var result = carCountryMarketService.Update(countryMarketDTO);
             if (result.Success)
             {
                 return Ok(result);
@@ -71,7 +71,7 @@ namespace CarRentApi.Controllers
         [HttpGet("Activity/{id}")]
         public IActionResult Activity(int id)
         {
-            var result = carGearBoxService.Activity(id);
+            var result = carCountryMarketService.Activity(id);
             if (result.Success)
             {
                 return Ok(result);

@@ -12,6 +12,7 @@ namespace DataAccessLayer.Mappers.AutoMapper
             CreateMap<CarYear, CarYearDTO>().ReverseMap();
             CreateMap<CarCountryMarket,CountryMarketDTO>().ReverseMap();
             CreateMap<CarGearBox,GearBoxDTO>().ReverseMap();
+            CreateMap<Ban,BanDTO>().ReverseMap();   
         }
     }
 }
