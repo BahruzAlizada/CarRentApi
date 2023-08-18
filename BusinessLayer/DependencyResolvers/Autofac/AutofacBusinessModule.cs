@@ -14,6 +14,15 @@ namespace BusinessLayer.DependencyResolvers.Autofac
         {
             builder.RegisterType<SubCategoryManager>().As<ISubCategoryService>().SingleInstance();
             builder.RegisterType<EFSubcategoryDal>().As<ISubCategoryDal>().SingleInstance();
+
+            builder.RegisterType<CarYearManager>().As<ICarYearService>().SingleInstance();
+            builder.RegisterType<EFCarYearDal>().As<ICarYearDal>().SingleInstance();
+
+            builder.RegisterType<CarCountryMarketManager>().As<ICarCountryMarketService>().SingleInstance();
+            builder.RegisterType<EFCarCountryMarketDal>().As<ICarCountryMarketDal>().SingleInstance();
+
+            builder.RegisterType<CarGearBoxManager>().As<ICarGearBoxService>().SingleInstance();
+            builder.RegisterType<EFCarGearBoxDal>().As<ICarGearBoxDal>().SingleInstance();
         }
     }
 }
