@@ -30,7 +30,7 @@ namespace DataAccessLayer.EntityFramework
                 List<CarCountryMarket> countryMarkets = context.CarCountryMarkets.ToList();
                 List<CountryMarketDTO> countryMarketDTOs = new List<CountryMarketDTO>();
 
-                foreach (var item in countryMarketDTOs)
+                foreach (var item in countryMarkets)
                 {
                     CountryMarketDTO dto = new CountryMarketDTO
                     {

@@ -27,6 +27,11 @@ namespace BusinessLayer.DependencyResolvers.Autofac
             builder.RegisterType<BanManager>().As<IBanService>().SingleInstance();
             builder.RegisterType<EFBanDal>().As<IBanDal>().SingleInstance();
 
+            builder.RegisterType<CarEngineTypeManager>().As<ICarEngineTypeService>().SingleInstance();
+            builder.RegisterType<EFCarEngineTypeDal>().As<ICarEngineTypeDal>().SingleInstance();
+
+            builder.RegisterType<CarNumberSeatManager>().As<ICarNumberSeatService>().SingleInstance();
+            builder.RegisterType<EFCarNumberSeatDal>().As<ICarNumberSeatDal>().SingleInstance();
         }
     }
 }
