@@ -32,6 +32,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<CarNumberSeatManager>().As<ICarNumberSeatService>().SingleInstance();
             builder.RegisterType<EFCarNumberSeatDal>().As<ICarNumberSeatDal>().SingleInstance();
+
+            builder.RegisterType<CarColorManager>().As<ICarColorService>().SingleInstance();
+            builder.RegisterType<EFCarColorDal>().As<ICarColorDal>().SingleInstance();
         }
     }
 }

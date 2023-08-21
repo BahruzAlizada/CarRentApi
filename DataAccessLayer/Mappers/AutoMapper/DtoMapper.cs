@@ -15,6 +15,7 @@ namespace DataAccessLayer.Mappers.AutoMapper
             CreateMap<Ban,BanDTO>().ReverseMap();
             CreateMap<CarEngineType,EngineTypeDTO>().ReverseMap();
             CreateMap<CarNumberSeat,NumberSeatDTO>().ReverseMap();
+            CreateMap<CarColor,CarColorDTO>().ReverseMap();
         }
     }
 }
