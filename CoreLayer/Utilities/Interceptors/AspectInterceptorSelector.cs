@@ -17,14 +17,15 @@ namespace CoreLayer.Utilities.Interceptors
     {
         public IInterceptor[] SelectInterceptors(Type type, MethodInfo method, IInterceptor[] interceptors)
         {
-            var classAttributes = type.GetCustomAttributes<MethodInterceptionBaseAttribute>
+            var classAttributes = type.GetCustomAttributes<MethodInterceptionBaseAttribute> // Get Classların atributelərini oxu
                 (true).ToList();
-            var methodAttributes = type.GetMethod(method.Name)
+            var methodAttributes = type.GetMethod(method.Name) // Get Metodların atributelərini oxu
                 .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
             classAttributes.AddRange(methodAttributes);
-            //classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger)));
+            //classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger))); // Bu Loglamadır.Avtomatik olaraq bütün Metodları Loglamaya daxil et
+            
 
-            return classAttributes.OrderBy(x => x.Priority).ToArray();
+            return classAttributes.OrderBy(x => x.Priority).ToArray(); // Öncəlik dəyərinə görə sırala
         }
     }
 

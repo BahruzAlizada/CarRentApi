@@ -2,6 +2,9 @@ using Autofac.Extensions.DependencyInjection;
 using Autofac;
 using BusinessLayer.DependencyResolvers.Autofac;
 using DataAccessLayer.Mappers.AutoMapper;
+using CoreLayer.Utilities.IoC;
+using CoreLayer.DependencyResolvers;
+using CoreLayer.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
@@ -16,6 +19,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(DtoMapper));
+
+builder.Services.AddDependencyResolvers(new ICoreModule[] // Burada ÝcoreModule edirik ki sabahsý gün baþqa module yarada bil?rik
+{
+    new CoreModule()
+}); ;
 
 var app = builder.Build();
 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BusinessLayer.Abstract;
 using BusinessLayer.Constans;
+using CoreLayer.Aspects.Autofac.Caching;
 using CoreLayer.Utilities.Business;
 using CoreLayer.Utilities.Results.Abstract;
 using CoreLayer.Utilities.Results.Concrete;
@@ -45,6 +46,7 @@ namespace BusinessLayer.Concrete
         #endregion
 
         #region GetAll
+        [CacheAspect]
         public IDataResult<List<BanDTO>> GetAll()
         {
             return new SuccessDataResult<List<BanDTO>>(banDal.GetAllForHome(), Message.GetAll);
