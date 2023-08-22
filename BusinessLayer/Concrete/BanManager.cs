@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
 using BusinessLayer.Abstract;
 using BusinessLayer.Constans;
+using BusinessLayer.ValidationRules.FluentValidation;
 using CoreLayer.Aspects.Autofac.Caching;
+using CoreLayer.Aspects.Autofac.Performance;
+using CoreLayer.Aspects.Autofac.Validation;
 using CoreLayer.Utilities.Business;
 using CoreLayer.Utilities.Results.Abstract;
 using CoreLayer.Utilities.Results.Concrete;
@@ -9,7 +12,6 @@ using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using EntityLayer.DTOs;
 using System;
-using System.Security.Cryptography.X509Certificates;
 
 namespace BusinessLayer.Concrete
 {
@@ -32,6 +34,8 @@ namespace BusinessLayer.Concrete
         #endregion
 
         #region Add
+        [CacheRemoveAspect("IBanService.Get")]
+        [ValidationAspect(typeof(BanValidator))]
         public IResult Add(BanDTO banDTO)
         {
             var result = BusinessRules.Run(CheckIfNameExisted(banDTO.BanName));
@@ -47,6 +51,7 @@ namespace BusinessLayer.Concrete
 
         #region GetAll
         [CacheAspect]
+        [PerformanceAspect(5)]
         public IDataResult<List<BanDTO>> GetAll()
         {
             return new SuccessDataResult<List<BanDTO>>(banDal.GetAllForHome(), Message.GetAll);
@@ -54,6 +59,7 @@ namespace BusinessLayer.Concrete
         #endregion
 
         #region GetById
+        [CacheAspect]
         public IDataResult<BanDTO> GetById(int id)
         {
            return new SuccessDataResult<BanDTO>(banDal.GetByIdForHome(id),Message.ByFilter);
@@ -61,6 +67,8 @@ namespace BusinessLayer.Concrete
         #endregion
 
         #region Update
+        [CacheRemoveAspect("IBanService.Get")]
+        [ValidationAspect(typeof(BanValidator))]
         public IResult Update(BanDTO banDTO)
         {
             var result = BusinessRules.Run(CheckIfNameExisted(banDTO.Id,banDTO.BanName));

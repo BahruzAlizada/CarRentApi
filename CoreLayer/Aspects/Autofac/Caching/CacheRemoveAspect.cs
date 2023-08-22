@@ -19,7 +19,7 @@ namespace CoreLayer.Aspects.Autofac.Caching
             _cacheManager = ServiceTool.ServiceProvider.GetService<ICacheManager>();
         }
 
-        protected override void OnSuccess(IInvocation invocation)
+        protected override void OnSuccess(IInvocation invocation) // Cache pozulanda(Add,Update,Delete) Bu zaman OnSuccess Qoymağın səbəbi metod uğur ilə nəticələnəndə olsun
         {
             _cacheManager.RemoveByPattern(_pattern);
         }
