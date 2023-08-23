@@ -1,11 +1,11 @@
-﻿using EntityLayer.Concrete;
+﻿using EntityLayer.DTOs;
 using FluentValidation;
 using System;
 
 
 namespace BusinessLayer.ValidationRules.FluentValidation
 {
-    public class CarEngineTypeValidator : AbstractValidator<CarEngineType>
+    public class CarEngineTypeValidator : AbstractValidator<EngineTypeDTO>
     {
         public CarEngineTypeValidator()
         {

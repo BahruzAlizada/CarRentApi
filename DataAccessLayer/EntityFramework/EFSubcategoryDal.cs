@@ -32,13 +32,13 @@ namespace DataAccessLayer.EntityFramework
                 List<SubCategory> subCategories = context.SubCategories.Include(x => x.Category).ToList();
                 List<SubCategoryForHomeDTO> subCategoryForHomeDTOs = new List<SubCategoryForHomeDTO>();
 
-                foreach (var item in subCategoryForHomeDTOs)
+                foreach (var item in subCategories)
                 {
                     SubCategoryForHomeDTO dto = new SubCategoryForHomeDTO
                     {
                         Id = item.Id,
-                        SubCategoryName = item.SubCategoryName,
-                        CategoryName = item.CategoryName,
+                        SubCategoryName = item.Name,
+                        CategoryName = item.Category.Name,
                         IsDeactive=item.IsDeactive
                     };
                     subCategoryForHomeDTOs.Add(dto);

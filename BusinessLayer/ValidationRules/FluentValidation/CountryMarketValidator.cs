@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 
 namespace BusinessLayer.ValidationRules.FluentValidation
 {
-    public class CountryMarketValidator : AbstractValidator<CarCountryMarket>
+    public class CountryMarketValidator : AbstractValidator<CountryMarketDTO>
     {
         public CountryMarketValidator()
         {

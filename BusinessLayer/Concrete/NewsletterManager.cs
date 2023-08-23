@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Constans;
 using BusinessLayer.ValidationRules.FluentValidation;
+using CoreLayer.Aspects.Autofac.Performance;
 using CoreLayer.Aspects.Autofac.Validation;
 using CoreLayer.Helper;
 using CoreLayer.Utilities.Business;
@@ -21,6 +22,7 @@ namespace BusinessLayer.Concrete
         }
 
         #region GetAll
+        [PerformanceAspect(3)]
         public IDataResult<List<Newsletter>> GetAll()
         {
             return new SuccessDataResult<List<Newsletter>>(newsletterDal.GetAll(), Message.GetAll);
@@ -28,6 +30,7 @@ namespace BusinessLayer.Concrete
         #endregion
 
         #region Subscripe
+        [PerformanceAspect(3)]
         [ValidationAspect(typeof(NewsletterValidator))]
         public async Task<IResult> Subscribe(Newsletter newsletter)
         {

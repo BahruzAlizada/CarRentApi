@@ -1,11 +1,12 @@
 ﻿using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using FluentValidation;
 using System;
 
 
 namespace BusinessLayer.ValidationRules.FluentValidation
 {
-    public class GearBoxValidator : AbstractValidator<CarGearBox>
+    public class GearBoxValidator : AbstractValidator<GearBoxDTO>
     {
         public GearBoxValidator()
         {

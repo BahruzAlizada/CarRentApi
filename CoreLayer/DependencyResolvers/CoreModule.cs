@@ -1,10 +1,11 @@
 ﻿using CoreLayer.CrossCuttingConcerns.Caching;
 using CoreLayer.CrossCuttingConcerns.Caching.Microsoft;
 using CoreLayer.Utilities.IoC;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-
+using System.Diagnostics;
 
 namespace CoreLayer.DependencyResolvers
 {
@@ -14,6 +15,7 @@ namespace CoreLayer.DependencyResolvers
         {
             services.AddMemoryCache();
             services.AddSingleton<ICacheManager, MemoryCacheManager>();
+            services.AddSingleton<Stopwatch>();
         }
     }
 }

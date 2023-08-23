@@ -19,7 +19,7 @@ namespace BusinessLayer.DependencyResolvers.Autofac
             builder.RegisterType<EFCarYearDal>().As<ICarYearDal>().SingleInstance();
 
             builder.RegisterType<CarCountryMarketManager>().As<ICarCountryMarketService>().SingleInstance();
-            builder.RegisterType<EFCarCountryMarketDal>().As<ICarCountryMarketDal>().SingleInstance();
+            builder.RegisterType<EFCarCountryMarketDal>().As<ICarCountryMarketDal>().SingleInstance();    
 
             builder.RegisterType<CarGearBoxManager>().As<ICarGearBoxService>().SingleInstance();
             builder.RegisterType<EFCarGearBoxDal>().As<ICarGearBoxDal>().SingleInstance();
@@ -35,6 +35,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<CarColorManager>().As<ICarColorService>().SingleInstance();
             builder.RegisterType<EFCarColorDal>().As<ICarColorDal>().SingleInstance();
+
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<EFCategoryDal>().As<ICategoryDal>().SingleInstance();
 
             builder.RegisterType<NewsletterManager>().As<INewsletterService>().SingleInstance();
             builder.RegisterType<EFNewsletterDal>().As<INewsletterDal>().SingleInstance();

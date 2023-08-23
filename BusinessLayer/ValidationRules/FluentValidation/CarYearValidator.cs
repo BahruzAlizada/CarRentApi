@@ -6,7 +6,7 @@ using System;
 
 namespace BusinessLayer.ValidationRules.FluentValidation
 {
-    public class CarYearValidator : AbstractValidator<CarYear>
+    public class CarYearValidator : AbstractValidator<CarYearDTO>
     {
         public CarYearValidator()
         {
