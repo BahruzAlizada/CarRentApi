@@ -11,5 +11,8 @@ namespace BusinessLayer.Constans
         public static string ByFilter = "Uğurla gətirildi";
         public static string GetAll = "Uğurla listələndi";
         public static string NameExisted = "Bu addan zatən var";
+
+        public static string CheckEmail = "Siz artıq abunə olmusunuz";
+        public static string Subscribed = "Abunə olundu";
     }
 }

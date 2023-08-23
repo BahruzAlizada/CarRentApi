@@ -35,6 +35,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<CarColorManager>().As<ICarColorService>().SingleInstance();
             builder.RegisterType<EFCarColorDal>().As<ICarColorDal>().SingleInstance();
+
+            builder.RegisterType<NewsletterManager>().As<INewsletterService>().SingleInstance();
+            builder.RegisterType<EFNewsletterDal>().As<INewsletterDal>().SingleInstance();
         }
     }
 }

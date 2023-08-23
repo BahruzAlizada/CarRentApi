@@ -19,7 +19,7 @@ namespace BusinessLayer.Concrete
     {
         private readonly IBanDal banDal;
         private readonly IMapper mapper;
-        public BanManager(IBanDal banDal,IMapper mapper)
+        public BanManager(IBanDal banDal,IMapper mapper)  
         {
             this.banDal = banDal;
             this.mapper = mapper;
@@ -51,7 +51,7 @@ namespace BusinessLayer.Concrete
 
         #region GetAll
         [CacheAspect]
-        [PerformanceAspect(5)]
+        [PerformanceAspect(1)]
         public IDataResult<List<BanDTO>> GetAll()
         {
             return new SuccessDataResult<List<BanDTO>>(banDal.GetAllForHome(), Message.GetAll);

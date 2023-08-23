@@ -23,6 +23,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<CarEngineType> CarEngineTypes { get; set; }
         public DbSet<CarNumberSeat> CarNumberSeats { get; set; }
         public DbSet<CarGearBox> CarGearBoxes { get; set; }
+        public DbSet<Newsletter> Newsletters { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
