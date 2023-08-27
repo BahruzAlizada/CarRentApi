@@ -71,7 +71,7 @@ namespace BusinessLayer.Concrete
         [ValidationAspect(typeof(BanValidator))]
         public IResult Update(BanDTO banDTO)
         {
-            var result = BusinessRules.Run(CheckIfNameExisted(banDTO.Id,banDTO.BanName));
+            var result = BusinessRules.Run(CheckIfNameExistedForUpdated(banDTO.Id,banDTO.BanName));
             if (result != null)
             {
                 return result;
@@ -95,7 +95,7 @@ namespace BusinessLayer.Concrete
         }
 
 
-        private IResult CheckIfNameExisted(int id,string name)
+        private IResult CheckIfNameExistedForUpdated(int id,string name)
         {
             var result = banDal.GetAll(x => x.BanName == name && x.Id!=id).Any();
             if (result)

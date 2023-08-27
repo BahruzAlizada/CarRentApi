@@ -56,7 +56,7 @@ namespace CarRentApi.Controllers
 
         #region Update
         [HttpPost("Update")]
-        public IActionResult Update(int id, BanDTO banDTO)
+        public IActionResult Update(BanDTO banDTO)
         {
             var result = banService.Update(banDTO);
             if (result.Success)

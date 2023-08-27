@@ -8,6 +8,8 @@ namespace DataAccessLayer.Abstract
 {
     public interface ICategoryDal : IEntityRepository<Category>
     {
+        List<CategoryWithSubCategoryDTO> GetAllWithSubCategories();
+        CategoryWithSubCategoryDTO GetByIdwithSubCategories(int id);
         List<CategoryDTO> GetAllJustCategory();
         CategoryDTO GetByIdJustCategory(int id);
        void Activity(int id);

@@ -14,8 +14,34 @@ namespace CarRentApi.Controllers
             this.categoryService = categoryService;
         }
 
-        #region GetAllJustCategories
-        [HttpGet("GetAllJustCategories")]
+        #region GetAllWithSubCategories
+        [HttpGet("GetAllWithSubCategories")]
+        public IActionResult GetAllWithSubCategories()
+        {
+            var result = categoryService.GetAllWithSubCategories();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        #endregion
+
+        #region GetByidWithSubCategories
+        [HttpGet("GetByidWithSubCategories/{id}")]
+        public IActionResult GetByidWithSubCategories(int id)
+        {
+            var result = categoryService.GetByIdWithSubCategories(id);
+            if(result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+		#endregion
+
+		#region GetAllJustCategories
+		[HttpGet("GetAllJustCategories")]
         public IActionResult GetAllJustCategories()
         {
             var result = categoryService.GetAllJustCategory();
@@ -55,7 +81,7 @@ namespace CarRentApi.Controllers
 
         #region Update
         [HttpPost("Update")]
-        public IActionResult Update(int id,CategoryDTO categoryDTO)
+        public IActionResult Update(CategoryDTO categoryDTO)
         {
             var result = categoryService.Update(categoryDTO);
             if (result.Success)
