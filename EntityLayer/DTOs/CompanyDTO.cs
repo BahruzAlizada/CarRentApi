@@ -2,9 +2,9 @@
 using System;
 
 
-namespace EntityLayer.Concrete
+namespace EntityLayer.DTOs
 {
-    public class Customer : IEntity
+    public class CompanyDTO : IDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,6 +14,5 @@ namespace EntityLayer.Concrete
         public string? Description { get; set; }
         public string? Image { get; set; }
         public string? Address { get; set; }
-        public List<Car> Cars { get; set; }
     }
 }

@@ -16,6 +16,7 @@ namespace EntityLayer.Concrete
         public int CarNumberSeatId { get; set; }  
         public int CarEngineTypeId { get; set; }
         public int CityId { get; set; }
+        public int CustomerId { get; set; }
 
         public double Km { get; set; }
         public double EnginePower { get; set; }
@@ -39,5 +40,6 @@ namespace EntityLayer.Concrete
         public CarNumberSeat CarNumberSeat { get; set; }
         public CarEngineType CarEngineType { get; set; }
         public City City { get; set; }
+        public Customer Customer { get; set; }
     }
 }

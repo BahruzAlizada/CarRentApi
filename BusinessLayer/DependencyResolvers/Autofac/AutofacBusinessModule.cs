@@ -44,6 +44,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<CityManager>().As<ICityService>().SingleInstance();
             builder.RegisterType<EFCityDal>().As<ICityDal>().SingleInstance();
+
+            builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
+            builder.RegisterType<EFCustomerDal>().As<ICustomerDal>().SingleInstance();
         }
     }
 }

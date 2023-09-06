@@ -18,6 +18,9 @@ namespace DataAccessLayer.Mappers.AutoMapper
             CreateMap<CarColor,CarColorDTO>().ReverseMap();
             CreateMap<Category, CategoryDTO>().ReverseMap();
             CreateMap<City,CityDTO>().ReverseMap();
+            CreateMap<Car,CarDTO>().ReverseMap();
+            CreateMap<Customer,CompanyDTO>().ReverseMap();
+            CreateMap<Customer,PersonDTO>().ReverseMap();
         }
     }
 }
