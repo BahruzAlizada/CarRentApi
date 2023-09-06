@@ -41,6 +41,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<NewsletterManager>().As<INewsletterService>().SingleInstance();
             builder.RegisterType<EFNewsletterDal>().As<INewsletterDal>().SingleInstance();
+
+            builder.RegisterType<CityManager>().As<ICityService>().SingleInstance();
+            builder.RegisterType<EFCityDal>().As<ICityDal>().SingleInstance();
         }
     }
 }

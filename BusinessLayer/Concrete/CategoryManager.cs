@@ -2,6 +2,7 @@
 using BusinessLayer.Abstract;
 using BusinessLayer.Constans;
 using BusinessLayer.ValidationRules.FluentValidation;
+using CoreLayer.Aspects.Autofac.Caching;
 using CoreLayer.Aspects.Autofac.Validation;
 using CoreLayer.Utilities.Business;
 using CoreLayer.Utilities.Results.Abstract;
@@ -45,9 +46,10 @@ namespace BusinessLayer.Concrete
             categoryDal.Add(category);
             return new SuccessResult(Message.Added);
         }
-		#endregion
+        #endregion
 
-		#region GetAllWithSubCategories
+        #region GetAllWithSubCategories
+        [CacheAspect]
 		public IDataResult<List<CategoryWithSubCategoryDTO>> GetAllWithSubCategories()
 		{
 			var values = categoryDal.GetAllWithSubCategories();
