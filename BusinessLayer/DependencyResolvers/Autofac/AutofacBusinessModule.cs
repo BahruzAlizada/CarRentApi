@@ -47,6 +47,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
             builder.RegisterType<EFCustomerDal>().As<ICustomerDal>().SingleInstance();
+
+            builder.RegisterType<CarManager>().As<ICarService>().SingleInstance();
+            builder.RegisterType<EFCarDal>().As<ICarDal>().SingleInstance();
         }
     }
 }

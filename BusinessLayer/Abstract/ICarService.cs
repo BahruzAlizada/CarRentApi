@@ -1,14 +1,17 @@
-﻿using EntityLayer.Concrete;
+﻿using CoreLayer.Utilities.Results.Abstract;
+using EntityLayer.Concrete;
 using EntityLayer.DTOs;
 using System;
 
 namespace BusinessLayer.Abstract
 {
-    internal interface ICarService
+    public interface ICarService
     {
-        void Add(CarDTO cardto);
-        void Update(CarDTO cardto);
-        void Delete(CarDTO cardto);
-        void Activity(int id);
+        IDataResult<List<CarForHomeDTO>> GetCars();
+        IDataResult<CarForHomeDTO> GetByIdCar(int id);
+        IResult Add(CarDTO cardto);
+        IResult Update(CarDTO cardto);
+        IResult Delete(int id);
+        IResult Activity(int id);
     }
 }

@@ -7,5 +7,8 @@ namespace DataAccessLayer.Abstract
 {
     public interface ICarDal : IEntityRepository<Car>
     {
+        List<CarForHomeDTO> GetAllForHome();
+        CarForHomeDTO GetByIdForHome(int id);
+        void Activity(int id);
     }
 }
