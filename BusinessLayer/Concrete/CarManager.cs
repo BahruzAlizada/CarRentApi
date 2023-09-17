@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Abstract;
+﻿using AutoMapper;
+using BusinessLayer.Abstract;
 using BusinessLayer.Constans;
 using CoreLayer.Aspects.Autofac.Caching;
 using CoreLayer.Utilities.Results.Abstract;
@@ -12,9 +13,11 @@ namespace BusinessLayer.Concrete
     public class CarManager : ICarService
     {
         private readonly ICarDal carDal;
-        public CarManager(ICarDal carDal)
+        private readonly IMapper mapper;
+        public CarManager(ICarDal carDal,IMapper mapper)
         {
             this.carDal = carDal;
+            this.mapper = mapper;
         }
 
         #region Activity
