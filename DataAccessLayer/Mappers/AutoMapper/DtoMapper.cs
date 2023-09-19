@@ -22,6 +22,7 @@ namespace DataAccessLayer.Mappers.AutoMapper
             CreateMap<Customer,CompanyDTO>().ReverseMap();
             CreateMap<Customer,PersonDTO>().ReverseMap();
             CreateMap<Faq,FaqDTO>().ReverseMap();
+            CreateMap<About,AboutDTO>().ReverseMap();
         }
     }
 }

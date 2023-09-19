@@ -53,6 +53,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<FaqManager>().As<IFaqService>().SingleInstance();
             builder.RegisterType<EFFaqDal>().As<IFaqDal>().SingleInstance();
+
+            builder.RegisterType<AboutManager>().As<IAboutService>().SingleInstance();
+            builder.RegisterType<EFAboutDal>().As<IAboutDal>().SingleInstance();
         }
     }
 }

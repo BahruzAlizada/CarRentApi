@@ -27,6 +27,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<City> Cities { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Faq> Faqs { get; set; }
+        public DbSet<About> Abouts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

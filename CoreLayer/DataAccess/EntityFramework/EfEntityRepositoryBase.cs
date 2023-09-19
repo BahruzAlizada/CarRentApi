@@ -38,7 +38,9 @@ namespace CoreLayer.DataAccess.EntityFramework
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault(filter);
+                return filter == null
+                    ? context.Set<TEntity>().SingleOrDefault()
+                    : context.Set<TEntity>().FirstOrDefault(filter);
             }
         }
 
