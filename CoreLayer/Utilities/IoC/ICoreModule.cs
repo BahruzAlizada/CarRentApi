@@ -5,6 +5,6 @@ namespace CoreLayer.Utilities.IoC
 {
     public interface ICoreModule
     {
-        void Loaad(IServiceCollection services);
+        void Load(IServiceCollection services);
     }
 }

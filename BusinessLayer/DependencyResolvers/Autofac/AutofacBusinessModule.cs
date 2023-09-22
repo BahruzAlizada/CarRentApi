@@ -56,6 +56,9 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<AboutManager>().As<IAboutService>().SingleInstance();
             builder.RegisterType<EFAboutDal>().As<IAboutDal>().SingleInstance();
+
+            builder.RegisterType<SliderManager>().As<ISliderService>().SingleInstance();
+            builder.RegisterType<EFSliderDal>().As<ISliderDal>().SingleInstance();
         }
     }
 }

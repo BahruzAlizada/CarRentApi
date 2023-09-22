@@ -11,7 +11,7 @@ namespace CoreLayer.DependencyResolvers
 {
     public class CoreModule : ICoreModule // Bütün proyektlərdə istifadə olunabiləcək Injectionları burda yazırıq.
     {
-        public void Loaad(IServiceCollection services)
+        public void Load(IServiceCollection services)
         {
             services.AddMemoryCache();
             services.AddSingleton<ICacheManager, MemoryCacheManager>();

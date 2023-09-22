@@ -12,7 +12,7 @@ namespace CoreLayer.Extensions
         {
             foreach (var module in modules)
             {
-                module.Loaad(services);
+                module.Load(services);
             }
 
             return ServiceTool.Create(services); //Bütün Modulları əlavə edib və bir araya toplamaq üçün
